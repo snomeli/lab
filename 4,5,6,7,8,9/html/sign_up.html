@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet" href="../css/blocks/header.css">
+    <link rel="stylesheet" href="../css/blocks/footer.css">
+    <link rel="stylesheet" href="../css/blocks/form.css">
+    <link rel="stylesheet" href="../css/blocks/modal.css">
+
+    <link rel="stylesheet" href="../css/styleForMobile.css">
+
+    <title>Регистрация</title>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <div class="header_content">
+            <div class="logo">
+                <img src="../img/BlogLogo.png" alt="logo">
+            </div>
+
+            <div class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav class="nav">
+                <div class="profile_image">
+                    <img src="../img/Profile.svg" alt="photo">
+                </div>
+
+                <div class="profile_links">
+                    <a id="open_modal" class="profile_link border_primary" href="#">Войти</a>
+                    <a class="profile_link border_primary"
+                       href="#">Зарегистрироваться</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+<div class="registration mt_60">
+    <div class="container">
+        <h1 class="registration_title">Регистрация</h1>
+
+        <!--todo::add action-->
+        <form class="form mt40 form_registration" action=""
+              method="post">
+            <div class="form_content">
+                <div class="form_items">
+                    <div class="form_item">
+                        <label class="form_label" for="input_name">Имя</label>
+                        <input id="input_name"
+                               class="form_input item_registration" type="text"
+                               name="user_name">
+
+                        <div class="items_footer">
+                            <div class="item_footer"
+                                 data-type="name_with_symbol">
+                                <div>
+                                    <img class="img_on" src="../img/svg_ok.svg"
+                                         alt="Всё чики-чики">
+                                    <img class="img_off hide"
+                                         src="../img/svg_NoOk.svg"
+                                         alt="Всё чики-чики">
+                                </div>
+
+                                <p class="item_footer_text">Не менее 2-х
+                                    символов, достуаны кириллица, латиница,
+                                    пробелы и дефисы</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form_item left_item">
+                        <label class="form_label"
+                               for="input_last_name">Фамилия</label>
+                        <input id="input_last_name"
+                               class="form_input item_registration" type="text"
+                               name="user_last_name">
+
+                        <div class="items_footer">
+                            <div class="item_footer"
+                                 data-type="fam_with_symbol">
+                                <div>
+                                    <img class="img_on" src="../img/svg_ok.svg"
+                                         alt="Всё чики-чики">
+                                    <img class="img_off hide"
+                                         src="../img/svg_NoOk.svg"
+                                         alt="Всё чики-чики">
+                                </div>
+
+                                <p class="item_footer_text">Не менее 2-х
+                                    символов, достуаны кириллица, латиница,
+                                    пробелы и дефисы</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form_item">
+                        <label class="form_label" for="login_registration">Логин
+                            *</label>
+                        <input id="login_registration"
+                               class="form_input item_registration" type="text"
+                               name="user_login" maxlength="150" required>
+
+                        <div class="items_footer">
+                            <div class="item_footer"
+                                 data-type="login_with_symbol">
+                                <div>
+                                    <img class="img_on" src="../img/svg_ok.svg"
+                                         alt="Всё чики-чики">
+                                    <img class="img_off hide"
+                                         src="../img/svg_NoOk.svg"
+                                         alt="Всё чики-чики">
+                                </div>
+
+                                <p class="item_footer_text">Только латинские буквы, цифры
+                                    и символы @.+-_</p>
+                            </div>
+
+                            <div class="item_footer"
+                                 data-type="login_min_lenght">
+                                <div>
+                                    <img class="img_on" src="../img/svg_ok.svg"
+                                         alt="Всё чики-чики">
+                                    <img class="img_off hide"
+                                         src="../img/svg_NoOk.svg"
+                                         alt="Всё чики-чики">
+                                </div>
+
+                                <p class="item_footer_text">Не менее 5
+                                    символов</p>
+                            </div>
+
+                            <div class="item_footer">
+                                <div>
+                                    <img class="img_on" src="../img/svg_ok.svg"
+                                         alt="Всё чики-чики">
+                                    <img class="img_off hide"
+                                         src="../img/svg_NoOk.svg"
+                                         alt="Всё чики-чики">
+                                </div>
+
+                                <p class="item_footer_text">Не более 150
+                                    символов</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form_item">
+                        <label class="form_label" for="email">E-mail</label>
+                        <input id="email" class="form_input item_registration"
+                               type="email" name="user_email" required>
+                    </div>
+
+                    <div class="form_item">
+                        <label class="form_label" for="pass_registration">Пароль*</label>
+                        <input id="pass_registration"
+                               class="form_input item_registration"
+                               type="password"
+                               name="user_password_registration" required>
+
+                        <div class="items_footer">
+                            <div class="item_footer"
+                                 data-type="pass_min_8_symbols">
+                                <div>
+                                    <img class="img_on" src="../img/svg_ok.svg"
+                                         alt="Всё чики-чики">
+                                    <img class="img_off hide"
+                                         src="../img/svg_NoOk.svg"
+                                         alt="Всё не чики-чики">
+                                </div>
+
+                                <p class="item_footer_text">Минимум 8
+                                    символов</p>
+                            </div>
+
+                            <div class="item_footer"
+                                 data-type="pass_equals_num">
+                                <div>
+                                    <img class="img_on" src="../img/svg_ok.svg"
+                                         alt="Всё чики-чики">
+                                    <img class="img_off hide"
+                                         src="../img/svg_NoOk.svg"
+                                         alt="Всё не чики-чики">
+                                </div>
+
+                                <p class="item_footer_text">Не может состоять
+                                    только из цифр</p>
+                            </div>
+
+                            <div class="item_footer"
+                                 data-type="pass_equals_with_login">
+                                <div>
+                                    <img id="img_ok_pass_equals" class="img_on"
+                                         src="../img/svg_ok.svg"
+                                         alt="Всё чики-чики">
+                                    <img id="img_no_ok_pass_equals"
+                                         class="img_off hide"
+                                         src="../img/svg_NoOk.svg"
+                                         alt="Всё не чики-чики">
+                                </div>
+
+                                <p id="text_pass_equals"
+                                   class="item_footer_text">Не должен совпадать
+                                    с логином</p>
+                            </div>
+
+                            <div class="item_footer"
+                                 data-type="password_database">
+                                <div>
+                                    <img class="img_on" src="../img/svg_ok.svg"
+                                         alt="Всё чики-чики">
+                                    <img class="img_off hide"
+                                         src="../img/svg_NoOk.svg"
+                                         alt="Всё не чики-чики">
+                                </div>
+
+                                <p class="item_footer_text">Не должен быть в
+                                    базе популярных паролей</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form_item">
+                        <label class="form_label" for="pass_confirmation">Подтверждение
+                            пароля *</label>
+                        <input id="pass_confirmation"
+                               class="form_input item_registration"
+                               type="password"
+                               name="user_pass_confirm" required>
+
+                        <div class="items_footer">
+                            <div class="item_footer"
+                                 data-type="pass_equals_with_pass">
+                                <div>
+                                    <img class="img_on" src="../img/svg_ok.svg"
+                                         alt="Всё чики-чики">
+                                    <img class="img_off hide"
+                                         src="../img/svg_NoOk.svg"
+                                         alt="Всё чики-чики">
+                                </div>
+
+                                <p class="item_footer_text">Пароли совпадают</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form_content_footer">
+                    <input id="consent_to_processing"
+                           class="color_ckeckbox_violet" type="checkbox"
+                           checked>
+                    <label class="form_label black_color ml10"
+                           for="consent_to_processing">Даю своё согласие
+                        на обработку
+                        персональных данных</label>
+                </div>
+
+                <div class="form_footer">
+                    <button id="btn_registration" class="form_button button_primary"
+                            type="submit">Зарегистрироваться
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div id="modal_enter" class="modal center">
+    <div class="modal_content center">
+        <div class="modal_top">
+            <div>
+                <h3 class="modal_title">Вход</h3>
+            </div>
+
+            <div>
+                <img id="form_img_close" src="../img/svg_close.svg" alt="close">
+            </div>
+        </div>
+
+        <form class="form" action="index.html" method="post">
+            <div class="form_item">
+                <label class="form_label" for="login">Логин</label>
+                <input id="login" class="form_input" type="text"
+                       name="user_name">
+            </div>
+
+            <div class="form_item mt20">
+                <label class="form_label" for="password">Пароль</label>
+                <input id="password" class="form_input" type="password"
+                       name="user_password">
+            </div>
+
+            <div class="form_buttons mt20">
+                <button id="btn_enter" class="form_button button_primary">Войти
+                </button>
+                <button id="forgot_pass" class="form_button">Забыли пароль?
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<footer>
+    <div class="container">
+        <div class="footer_content">
+            <div class="footer_nav">
+                <a href="https://github.com/Dice431/Laboratory"
+                   class="profile_link link_primary width">Об авторе</a>
+                <a href="#" class="profile_link link_primary">Технологии</a>
+            </div>
+
+            <p class="blog_year">© Blog, 2022</p>
+        </div>
+    </div>
+</footer>
+
+<script type="module" src="../js/modules/Forms/formRegistration.js"></script>
+</body>
+
+</html>

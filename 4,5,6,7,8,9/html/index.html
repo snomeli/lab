@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Лента публикаций</title>
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="../css/reset.css">
+
+	<!-- General -->
+	<link rel="stylesheet" href="../css/style.css">
+
+	<!-- Additional -->
+	<link rel="stylesheet" href="../css/blocks/header.css">
+	<link rel="stylesheet" href="../css/blocks/footer.css">
+	<link rel="stylesheet" href="../css/blocks/modal.css">
+	<link rel="stylesheet" href="../css/blocks/form.css">
+	<link rel="stylesheet" href="../css/blocks/main.css">
+
+	<!-- Mobile -->
+	<link rel="stylesheet" href="../css/styleForMobile.css">
+</head>
+
+<body>
+<div id="app">
+	<!-- Header -->
+	<header>
+		<div class="container">
+			<div class="header_content">
+				<div class="logo">
+					<img src="../img/BlogLogo.png" alt="logo">
+				</div>
+
+				<!-- Burger -->
+				<div class="menu-btn">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+
+				<!-- Profile -->
+				<nav class="profile">
+					<div class="profile_image">
+						<img src="../img/Profile.svg" alt="photo">
+					</div>
+					<div class="profile_links">
+						<a id="open_modal"
+						   class="profile_link border_primary"
+						   href="#"
+						>Войти</a>
+						<a class="profile_link border_primary"
+						   href="sign_up.html">Зарегистрироваться</a>
+
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<!-- Main -->
+	<main class="main mt_60">
+		<div class="container">
+			<h1 class="main_title">Последние публикации</h1>
+			<div class="main_content mt40">
+				<div class="main_left">
+					<div class="main_items">
+						<div v-for="it in posts"
+							 class="main_item">
+
+							<img v-bind:src="it.image" class="main_item_img"
+								 alt="photo">
+
+							<h2 class="main_item_title">
+								{{it.title}}
+							</h2>
+
+							<p class="main_item_text">
+								{{it.intro}}
+							</p>
+
+							<div class="main_item_categories">
+                                    <span v-for="label in it.labels"
+										  class="main_item_category"
+										  v-bind:data-categories="label">
+                                        {{label}}
+                                    </span>
+
+							</div>
+						</div>
+					</div>
+					<!--Load more-->
+					<button class="add_new_items">Загрузить ещё 6</button>
+				</div>
+
+				<!-- Navigation -->
+				<div class="main_navigation">
+					<h3 class="main_navigation_title">Рубрики</h3>
+
+					<div class="main_navigation_content">
+						<div>
+							<button id="show_all_publication"
+									class="link_primary headings_btn">
+								Показать всё ❤❤❤
+							</button>
+						</div>
+
+						<div class="headings">
+							<button class="headings_btn link_primary"
+									data-categories="Education">
+								Обучение
+							</button>
+
+							<button class="headings_btn link_primary"
+									data-categories="Career">
+								Career
+							</button>
+
+							<button class="headings_btn link_primary"
+									data-categories="Figma">
+								Figma
+							</button>
+
+							<button class="headings_btn link_primary"
+									data-categories="Console">
+								Консоль
+							</button>
+
+							<button class="headings_btn link_primary"
+									data-categories="Git">
+								Git
+							</button>
+
+							<button class="headings_btn link_primary"
+									data-categories="News">
+								Новости
+							</button>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="burger">
+				<div class="container"></div>
+			</div>
+		</div>
+	</main>
+
+	<!-- Footer -->
+	<footer>
+		<div class="container">
+			<div class="footer_content">
+				<div class="footer_nav">
+					<a href="https://github.com/AtlantidaDweller?tab=repositories"
+					   class="profile_link link_primary width">Об
+						авторе</a>
+					<a href="#" class="profile_link link_primary">Технологии</a>
+				</div>
+
+				<p class="blog_year">© Blog, 2022</p>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Modal -->
+	<div id="modal_enter" class="modal center">
+		<div class="modal_content center">
+			<div class="modal_top">
+				<div>
+					<h3 class="modal_title">Вход</h3>
+				</div>
+
+				<div>
+					<img id="form_img_close" src="../img/svg_close.svg"
+						 alt="close">
+				</div>
+			</div>
+
+			<form class="form" action="index.html" method="post">
+				<div class="form_item">
+					<label class="form_label" for="login">Логин</label>
+					<input id="login" class="form_input" type="text"
+						   name="user_name" required>
+				</div>
+
+				<div class="form_item mt20">
+					<label class="form_label" for="password">Пароль</label>
+					<input id="password" class="form_input" type="password"
+						   name="user_password" required>
+				</div>
+
+				<div class="form_buttons mt20">
+					<button id="btn_enter" class="form_button button_primary"
+							type="submit">Войти
+					</button>
+					<button id="forgot_pass" class="form_button">Забыли
+						пароль?
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</div>
+
+<!--Vue-->
+<script src="../js/Vue/vue.min.js"></script>
+<script src="../js/axios/axios.min.js"></script>
+<script src="../js/Vue/pages/vueIndex.js"></script>
+
+<!--Scripts-->
+<script type="module" src="../js/index.js"></script>
+</body>
+
+</html>

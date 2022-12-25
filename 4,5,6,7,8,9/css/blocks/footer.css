@@ -1,0 +1,19 @@
+footer {
+    margin: 60px 0;
+}
+
+.footer_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer_nav {
+    display: flex;
+    align-items: center;
+}
+
+.width {
+    margin-left: 0;
+    width: 101px;
+}

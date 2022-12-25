@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Styles-->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet" href="../css/blocks/header.css">
+    <link rel="stylesheet" href="../css/blocks/footer.css">
+    <link rel="stylesheet" href="../css/blocks/main.css">
+    <link rel="stylesheet" href="../css/blocks/author.css">
+
+    <title>Страница автора</title>
+</head>
+
+<body>
+<div id="app">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header_content">
+                <div class="logo">
+                    <img src="../img/BlogLogo.png" alt="logo">
+                </div>
+
+                <div class="menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <nav class="nav">
+                    <div class="profile_image">
+                        <img src="../img/Profile.svg" alt="photo">
+                    </div>
+
+                    <div class="profile_links">
+
+                        <a id="open_modal_enter" class="profile_link" href="#">@UserAccountLogin</a>
+                        <button id="btn_new_item"
+                                class="profile_links_btn white_btn">
+                            Новая
+                            публикация
+                        </button>
+                        <a class="border_primary">Выйти</a>
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <section class="main mt_60">
+        <div class="container">
+            <div class="main_content mt40">
+                <div class="user">
+                    <h1 class="user_title font_size_18" v-html="authorName">
+                        Юзьеров Константин Агапович</h1>
+
+                    <a href="#" class="link_primary font_size_18"
+                       v-html="authorLogin">@OtherUserAccountName</a>
+
+                    <div class="subscribers mt20">
+                        <p class="font_size_18">
+                            Подписчиков: <span
+                                class="count_users"
+                                v-html="subscribers"></span></p>
+                        <p class="font_size_18">
+                            Подписан: <span
+                                class="count_users" v-html="signed"></span></p>
+                    </div>
+
+                    <p class="font_size_18 mt20">
+                        Записей: <span id="count_users"
+                                       class="count_users"
+                                       v-html="postCount"></span>
+                    </p>
+
+                    <div class="mt20">
+                        <h3>Выберите автора</h3>
+
+                        <label for="selectAuthors"></label>
+                        <select id="selectAuthors" class="mt10"
+                                v-model="selectedAuthorLogin">
+                            <option value="Посты всех авторов">Посты всех
+                                авторов
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="main_left">
+
+                    <div class="main_items">
+                        <div class="main_item"
+                             v-for="it in filterPosts">
+
+                            <img v-bind:src="it.image" class="main_item_img"
+                                 alt="photo">
+
+                            <h2 class="main_item_title">
+                                {{it.title}}
+                            </h2>
+
+                            <p class="main_item_text">
+                                {{it.intro}}
+                            </p>
+
+                            <div class="main_item_categories">
+                                    <span v-for="label in it.labels"
+                                          class="main_item_category"
+                                          v-bind:data-categories="label">
+                                        {{label}}
+                                    </span>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <button class="add_new_items">Загрузить ещё 6</button>
+                </div>
+
+            </div>
+
+            <div class="burger">
+                <div class="container">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer_content">
+                <div class="footer_nav">
+                    <a href="https://github.com/Dice431/Laboratory"
+                       class="profile_link link_primary width">Об
+                        авторе</a>
+                    <a href="#" class="profile_link link_primary">Технологии</a>
+                </div>
+
+                <p class="blog_year">© Blog, 2022</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!--Vue-->
+<script src="../js/Vue/vue.min.js"></script>
+<script src="../js/Vue/data/posts.js"></script>
+<script src="../js/Vue/data/authors.js"></script>
+<script src="../js/Vue/pages/vueAuthor.js"></script>
+
+</body>
+</html>
